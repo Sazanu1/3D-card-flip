@@ -25,6 +25,7 @@
                 overflow: hidden;
                 backface-visibility: hidden;
                 position: absolute;
+                transition: transform .6s;
             }
 
             .front {
@@ -37,7 +38,7 @@
 
             .back{
                 background: #f1f1f1;
-                transform: perspective(600px) rotateY(0deg);
+                transform: perspective(600px) rotateY(180deg);
 
                 .back-content{
                     color: #2c3e50;
@@ -67,6 +68,16 @@
                     }
                 }
             }
+
+            
         }
     }
 }
+
+.card:hover > .front{
+    transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .back{
+    transform: perspective(600px) rotateY(0deg);
+}
+

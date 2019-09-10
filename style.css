@@ -30,6 +30,10 @@
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   position: absolute;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
 }
 
 * body .card .front {
@@ -43,8 +47,8 @@
 
 * body .card .back {
   background: #f1f1f1;
-  -webkit-transform: perspective(600px) rotateY(0deg);
-          transform: perspective(600px) rotateY(0deg);
+  -webkit-transform: perspective(600px) rotateY(180deg);
+          transform: perspective(600px) rotateY(180deg);
 }
 
 * body .card .back .back-content {
@@ -79,5 +83,15 @@
 * body .card .back .back-content .sm a:hover {
   background: #2c3e50;
   color: white;
+}
+
+.card:hover > .front {
+  -webkit-transform: perspective(600px) rotateY(-180deg);
+          transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .back {
+  -webkit-transform: perspective(600px) rotateY(0deg);
+          transform: perspective(600px) rotateY(0deg);
 }
 /*# sourceMappingURL=style.css.map */
